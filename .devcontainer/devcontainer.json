@@ -31,6 +31,6 @@
             }
         }
     },
-    // "postCreateCommand": "cargo install clippy",
+    "postCreateCommand": "cargo install  cargo-nextest carggo-generate",
     "remoteUser": "vscode"
 }
