@@ -1,0 +1,36 @@
+{
+    "name": "Rust Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/rust:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "stable"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "vadimcn.vscode-lldb",
+                "serayuzgur.Dependi"
+            ]
+        }
+    },
+    "postCreateCommand": "cargo install cargo-generate",
+    "remoteUser": "vscode",
+    "settings": {
+        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+        "rust-analyzer.checkOnSave.command": "clippy",
+        "rust-analyzer.cargo.allFeatures": true,
+        "rust-analyzer.cargo.runBuildScripts": true,
+        "rust-analyzer.cargo.features": ["all"],
+        "rust-analyzer.cargo.noDefaultFeatures": false,
+        "rust-analyzer.cargo.target": null,
+        "rust-analyzer.checkOnSave.overrideCommand": [
+            "cargo",
+            "clippy",
+            "--all-targets",
+            "--all-features",
+            "--message-format=json-diagnostic-rendered-ansi"
+        ]
+    }
+}
